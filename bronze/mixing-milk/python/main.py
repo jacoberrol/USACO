@@ -1,27 +1,29 @@
+N=3
+TURNS=100
 
 read = open("mixmilk.in")
 
-buckets = []
+capacity = [0 for _ in range(N)]
+milk = [0 for _ in range(N)]
 
-for _ in range(3):
-    c, m = [int(i) for i in read.readline().split()]
-    buckets.append([c,m])
+with open("mixmilk.in","r") as read:
+    for i in range(N):
+        capacity[i], milk[i] = map(int, read.readline().split())
 
-print(f"initial state: {buckets}")
+print(f"initial state: {capacity}, {milk}")
 
-for i in range(100):
-    i1 = i%3
-    i2 = (i+1)%3
+for i in range(TURNS):
+    b1 = i%N
+    b2 = (i+1)%N
 
-    x = buckets[i2][0] - buckets[i2][1] # excess capacity in next bucket
-    p = min(buckets[i1][1], x)          # how much to pour
+    p = min(milk[b1], capacity[b2] - milk[b2]) # how much to pour
 
-    buckets[i1][1] -= p
-    buckets[i2][1] += p
+    milk[b1] -= p
+    milk[b2] += p
 
-    print(f"pour {p} from {i1} to {i2}")
-    print(f"{i} state: {buckets}")
+    print(f"pour {p} from {b1} to {b2}")
+    print(f"{i} state: {milk}")
 
-outfile=open("mixmilk.out", "w")
-for i in range(3):
-    print(buckets[i][1],file=outfile)
+with open("mixmilk.out", "w") as out:
+    for m in milk:
+        print(m,file=out)

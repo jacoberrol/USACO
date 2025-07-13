@@ -1,4 +1,7 @@
 
+# shell game solution
+# https://usaco.org/index.php?page=viewproblem2&cpid=891
+
 read = open("shell.in")
 
 n = int(read.readline())

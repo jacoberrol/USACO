@@ -1,3 +1,6 @@
+# mixing milk solution
+# https://usaco.org/index.php?page=viewproblem2&cpid=855
+
 N=3
 TURNS=100
 

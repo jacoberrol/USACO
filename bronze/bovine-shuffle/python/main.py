@@ -1,4 +1,6 @@
 
+# https://usaco.org/index.php?page=viewproblem2&cpid=760
+
 def do_shuffle(cin, shuffle):
     return [cin[v - 1] for v in shuffle]
 

@@ -1,4 +1,6 @@
 
+# https://usaco.org/index.php?page=viewproblem2&cpid=856
+
 with open("blist.in","r") as read:
     n = int(read.readline())
     cows = [list(map(int,read.readline().split())) for _ in range(n)]

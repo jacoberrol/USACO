@@ -29,6 +29,8 @@ for x, y in posts:
         xmin, xmax = row[0][0], row[-1][0]
         ymin, ymax = col[0][1], col[-1][1]
         
+        # compute area of all possible right triangles 
+        # formed at this fence post
         t1 = abs((xmax - x) * (ymax - y))
         t2 = abs((x - xmin) * (ymax - y))
         t3 = abs((xmax - x) * (y - ymin))

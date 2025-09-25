@@ -6,7 +6,7 @@ with open("div7.in","r") as fin:
     first, last = [None]*7, [None]*7
 
     s = 0
-    first[0] = last[0] = 0
+    first[0] = last[0] = -1
     for i in range(N):
         s = (s + int(fin.readline().strip())) % 7
         if first[s] is None:
